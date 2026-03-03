@@ -10,12 +10,18 @@
      DOM REFERENCES
   ───────────────────────────────────────────── */
   const DOM = {
-    cursorDot:  document.getElementById('cursorDot'),
+    cursorDot: document.getElementById('cursorDot'),
     cursorRing: document.getElementById('cursorRing'),
-    navbar:     document.getElementById('navbar'),
-    navToggle:  document.getElementById('navToggle'),
-    navLinks:   document.getElementById('navLinks'),
-    yearEl:     document.getElementById('currentYear'),
+    navbar: document.getElementById('navbar'),
+    navToggle: document.getElementById('navToggle'),
+    navLinks: document.getElementById('navLinks'),
+    yearEl: document.getElementById('currentYear'),
+    langBtnPT: document.getElementById('langBtnPT'),
+    langBtnEN: document.getElementById('langBtnEN'),
+    heroPhotoContainer: document.getElementById('heroPhotoContainer'),
+    heroPhoto: document.getElementById('heroPhoto'),
+    heroPhotoPlaceholder: document.getElementById('heroPhotoPlaceholder'),
+    photoUpload: document.getElementById('photoUpload'),
   };
 
 
@@ -37,10 +43,10 @@
     cursor.ringX += (cursor.x - cursor.ringX) * LERP_FACTOR;
     cursor.ringY += (cursor.y - cursor.ringY) * LERP_FACTOR;
 
-    DOM.cursorDot.style.left  = cursor.x + 'px';
-    DOM.cursorDot.style.top   = cursor.y + 'px';
+    DOM.cursorDot.style.left = cursor.x + 'px';
+    DOM.cursorDot.style.top = cursor.y + 'px';
     DOM.cursorRing.style.left = cursor.ringX + 'px';
-    DOM.cursorRing.style.top  = cursor.ringY + 'px';
+    DOM.cursorRing.style.top = cursor.ringY + 'px';
 
     requestAnimationFrame(animateCursor);
   }
@@ -215,7 +221,7 @@
     const PARTICLE_COUNT = 40;
 
     function resize() {
-      canvas.width  = hero.offsetWidth;
+      canvas.width = hero.offsetWidth;
       canvas.height = hero.offsetHeight;
     }
 
@@ -245,9 +251,9 @@
         p.y += p.speedY;
 
         // Wrap around edges
-        if (p.x < 0)             p.x = canvas.width;
-        if (p.x > canvas.width)  p.x = 0;
-        if (p.y < 0)             p.y = canvas.height;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
 
         ctx.beginPath();
@@ -296,6 +302,126 @@
     }, 1200);
   }
 
+
+  /* ─────────────────────────────────────────────
+     10. LANGUAGE SWITCHER
+  ───────────────────────────────────────────── */
+  var currentLang = 'pt';
+
+  function setLanguage(lang) {
+    currentLang = lang;
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+
+    // Toggle active class on buttons
+    DOM.langBtnPT.classList.toggle('active', lang === 'pt');
+    DOM.langBtnEN.classList.toggle('active', lang === 'en');
+
+    // Swap page title
+    var titleEl = document.getElementById('pageTitle');
+    if (titleEl && titleEl.dataset[lang]) {
+      document.title = titleEl.dataset[lang];
+    }
+
+    // Swap meta description
+    var metaEl = document.getElementById('metaDescription');
+    if (metaEl && metaEl.dataset[lang]) {
+      metaEl.setAttribute('content', metaEl.dataset[lang]);
+    }
+
+    // Translate all elements with data-pt / data-en
+    // innerHTML: elements whose translation contains HTML markup
+    var translatableHTML = document.querySelectorAll(
+      '.title-line[data-pt][data-en], ' +
+      '.about-lead[data-pt][data-en], ' +
+      'p[data-pt][data-en]'
+    );
+    translatableHTML.forEach(function (el) {
+      var val = el.dataset[lang];
+      if (val !== undefined) { el.innerHTML = val; }
+    });
+
+    // textContent: elements whose translation is plain text (no HTML tags inside)
+    var translatableText = document.querySelectorAll(
+      'a[data-pt][data-en], ' +
+      'h2[data-pt][data-en], ' +
+      'h3[data-pt][data-en], ' +
+      '.hero-tag > span[data-pt][data-en], ' +
+      '.stat-label[data-pt][data-en], ' +
+      '.placeholder-text[data-pt][data-en], ' +
+      '.placeholder-hint[data-pt][data-en], ' +
+      '.photo-overlay > span[data-pt][data-en], ' +
+      '.btn span[data-pt][data-en]'
+    );
+    translatableText.forEach(function (el) {
+      var val = el.dataset[lang];
+      if (val !== undefined) { el.textContent = val; }
+    });
+
+    // Save preference
+    try { localStorage.setItem('portfolio_lang', lang); } catch (e) { }
+  }
+
+  function initLanguageSwitcher() {
+    if (!DOM.langBtnPT || !DOM.langBtnEN) return;
+
+    // Restore saved preference
+    var savedLang = 'pt';
+    try { savedLang = localStorage.getItem('portfolio_lang') || 'pt'; } catch (e) { }
+
+    // Set initial state
+    setLanguage(savedLang);
+
+    DOM.langBtnPT.addEventListener('click', function () { setLanguage('pt'); });
+    DOM.langBtnEN.addEventListener('click', function () { setLanguage('en'); });
+  }
+
+
+  /* ─────────────────────────────────────────────
+     11. PROFILE PHOTO UPLOAD
+  ───────────────────────────────────────────── */
+  function initPhotoUpload() {
+    var container = DOM.heroPhotoContainer;
+    var photo = DOM.heroPhoto;
+    var placeholder = DOM.heroPhotoPlaceholder;
+    var input = DOM.photoUpload;
+
+    if (!container || !photo || !input) return;
+
+    // Click photo container to trigger file input
+    container.addEventListener('click', function () {
+      input.click();
+    });
+
+    // Handle file selection
+    input.addEventListener('change', function (e) {
+      var file = e.target.files[0];
+      if (!file || !file.type.startsWith('image/')) return;
+
+      var reader = new FileReader();
+      reader.onload = function (evt) {
+        photo.src = evt.target.result;
+        photo.style.display = 'block';
+        if (placeholder) placeholder.style.display = 'none';
+
+        // Save to localStorage (base64)
+        try { localStorage.setItem('portfolio_photo', evt.target.result); } catch (e) { }
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Restore saved photo
+    try {
+      var saved = localStorage.getItem('portfolio_photo');
+      if (saved) {
+        photo.src = saved;
+        photo.style.display = 'block';
+        if (placeholder) placeholder.style.display = 'none';
+      }
+    } catch (e) { }
+  }
+
   // Inject the keyframes for name glow
   const styleSheet = document.createElement('style');
   styleSheet.textContent = `
@@ -317,6 +443,8 @@
     initActiveNav();
     initParticles();
     initTitleAnimation();
+    initLanguageSwitcher();
+    initPhotoUpload();
     closeMobileNavOnClick();
 
     // Event listeners

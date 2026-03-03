@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Gustavo — Software Engineer & AI Builder. Building intelligent systems, SaaS products, and aerospace-grade solutions." />
+        content="Gustavo — Engenheiro de Software & Builder de IA. Construindo sistemas inteligentes, produtos SaaS e soluções aeroespaciais."
+        id="metaDescription"
+        data-pt="Gustavo — Engenheiro de Software & Builder de IA. Construindo sistemas inteligentes, produtos SaaS e soluções aeroespaciais."
+        data-en="Gustavo — Software Engineer & AI Builder. Building intelligent systems, SaaS products, and aerospace-grade solutions." />
     <meta name="keywords" content="Software Engineer, AI, SaaS, Aerospace, Portfolio, Builder" />
     <meta name="author" content="Gustavo" />
-    <title>Gustavo — Software Engineer & AI Builder</title>
+    <title id="pageTitle" data-pt="Gustavo — Engenheiro de Software & Builder de IA"
+        data-en="Gustavo — Software Engineer & AI Builder">Gustavo — Engenheiro de Software & Builder de IA</title>
 
     <!-- Google Fonts: Inter (body) + JetBrains Mono (code/accents) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,11 +41,24 @@
                 <span class="logo-bracket">&lt;</span>G<span class="logo-bracket">/&gt;</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#about" class="nav-link" data-pt="Sobre" data-en="About">Sobre</a></li>
+                <li><a href="#projects" class="nav-link" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+                <li><a href="#skills" class="nav-link" data-pt="Habilidades" data-en="Skills">Habilidades</a></li>
+                <li><a href="#contact" class="nav-link" data-pt="Contato" data-en="Contact">Contato</a></li>
             </ul>
+            <!-- Language Switcher -->
+            <div class="lang-switcher" id="langSwitcher" aria-label="Language switcher">
+                <button class="lang-btn" id="langBtnPT" data-lang="pt" aria-label="Português" title="Português">
+                    <span class="flag-icon">🇧🇷</span>
+                    <span class="lang-code">PT</span>
+                </button>
+                <div class="lang-divider"></div>
+                <button class="lang-btn" id="langBtnEN" data-lang="en" aria-label="English" title="English">
+                    <span class="flag-icon">🇺🇸</span>
+                    <span class="lang-code">EN</span>
+                </button>
+            </div>
+
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -58,33 +75,79 @@
         <div class="hero-glow"></div>
         <div class="hero-grid-bg"></div>
 
-        <div class="hero-content reveal">
-            <p class="hero-tag">
-                <span class="tag-dot"></span>
-                Software Engineer · AI Builder · Aerospace
-            </p>
-            <h1 class="hero-title">
-                <span class="title-line">Hi, I'm <span class="highlight">Gustavo</span></span>
-            </h1>
-            <p class="hero-subtitle">
-                Building intelligent systems that<br />solve real problems.
-            </p>
-            <p class="hero-description">
-                Engineer with a builder mindset — from SaaS products and AI-powered
-                solutions to aerospace-grade systems. Focused on shipping software
-                that matters.
-            </p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary" id="btnProjects">
-                    <span>View Projects</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </a>
-                <a href="#contact" class="btn btn-secondary" id="btnContact">
-                    <span>Get in Touch</span>
-                </a>
+        <div class="hero-inner">
+            <!-- Left: Text content -->
+            <div class="hero-content reveal">
+                <p class="hero-tag">
+                    <span class="tag-dot"></span>
+                    <span data-pt="Engenheiro de Software · Builder de IA · Aeroespacial"
+                        data-en="Software Engineer · AI Builder · Aerospace">Engenheiro de Software · Builder de IA ·
+                        Aeroespacial</span>
+                </p>
+                <h1 class="hero-title">
+                    <span class="title-line" data-pt="Olá, sou o <span class='highlight'>Gustavo</span>"
+                        data-en="Hi, I'm <span class='highlight'>Gustavo</span>">Olá, sou o <span
+                            class="highlight">Gustavo</span></span>
+                </h1>
+                <p class="hero-subtitle" data-pt="Construindo sistemas inteligentes que resolvem problemas reais."
+                    data-en="Building intelligent systems that solve real problems.">
+                    Construindo sistemas inteligentes que<br />resolvem problemas reais.
+                </p>
+                <p class="hero-description"
+                    data-pt="Engenheiro com mentalidade de builder — de produtos SaaS e soluções com IA a sistemas aeroespaciais. Focado em entregar software que importa."
+                    data-en="Engineer with a builder mindset — from SaaS products and AI-powered solutions to aerospace-grade systems. Focused on shipping software that matters.">
+                    Engenheiro com mentalidade de builder — de produtos SaaS e
+                    soluções com IA a sistemas aeroespaciais. Focado em entregar
+                    software que importa.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary" id="btnProjects">
+                        <span data-pt="Ver Projetos" data-en="View Projects">Ver Projetos</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary" id="btnContact">
+                        <span data-pt="Entrar em Contato" data-en="Get in Touch">Entrar em Contato</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Profile photo -->
+            <div class="hero-photo-wrapper reveal">
+                <div class="hero-photo-ring">
+                    <div class="hero-photo-container" id="heroPhotoContainer">
+                        <img src="" alt="Gustavo" class="hero-photo" id="heroPhoto" style="display:none;" />
+                        <div class="hero-photo-placeholder" id="heroPhotoPlaceholder">
+                            <div class="placeholder-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5" />
+                                    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <p class="placeholder-text" data-pt="Clique para adicionar sua foto"
+                                data-en="Click to add your photo">Clique para adicionar sua foto</p>
+                            <p class="placeholder-hint" data-pt="JPG, PNG ou WebP" data-en="JPG, PNG or WebP">JPG, PNG
+                                ou WebP</p>
+                        </div>
+                        <input type="file" id="photoUpload" accept="image/*" style="display:none;"
+                            aria-label="Upload profile photo" />
+                        <div class="photo-overlay" id="photoOverlay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span data-pt="Trocar foto" data-en="Change photo">Trocar foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Decorative orbit dots -->
+                <div class="orbit-dot orbit-dot-1"></div>
+                <div class="orbit-dot orbit-dot-2"></div>
+                <div class="orbit-dot orbit-dot-3"></div>
             </div>
         </div>
 
@@ -101,33 +164,38 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">01</span>
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
             </div>
 
             <div class="about-grid">
                 <!-- Left column — text -->
                 <div class="about-text reveal">
-                    <p class="about-lead">
-                        I'm a <strong>Software Engineer</strong> passionate about transforming
-                        ideas into scalable, intelligent products.
+                    <p class="about-lead"
+                        data-pt="Sou um <strong>Engenheiro de Software</strong> apaixonado por transformar ideias em produtos escaláveis e inteligentes."
+                        data-en="I'm a <strong>Software Engineer</strong> passionate about transforming ideas into scalable, intelligent products.">
+                        Sou um <strong>Engenheiro de Software</strong> apaixonado por transformar
+                        ideias em produtos escaláveis e inteligentes.
                     </p>
-                    <p>
-                        With a background spanning <strong>Aerospace Engineering</strong> and
-                        <strong>Artificial Intelligence</strong>, I bring a unique perspective
-                        to software development — combining rigorous engineering discipline
-                        with a product-first mentality.
+                    <p data-pt="Com experiência em <strong>Engenharia Aeroespacial</strong> e <strong>Inteligência Artificial</strong>, trago uma perspectiva única para o desenvolvimento de software — combinando disciplina de engenharia rigorosa com uma mentalidade focada no produto."
+                        data-en="With a background spanning <strong>Aerospace Engineering</strong> and <strong>Artificial Intelligence</strong>, I bring a unique perspective to software development — combining rigorous engineering discipline with a product-first mentality.">
+                        Com experiência em <strong>Engenharia Aeroespacial</strong> e
+                        <strong>Inteligência Artificial</strong>, trago uma perspectiva
+                        única para o desenvolvimento de software — combinando disciplina
+                        de engenharia rigorosa com uma mentalidade focada no produto.
                     </p>
-                    <p>
-                        I specialize in building <strong>SaaS platforms</strong>,
-                        <strong>AI-powered applications</strong>, and
-                        <strong>full-stack systems</strong> designed to solve complex
-                        real-world problems. My approach is pragmatic: ship fast,
-                        iterate relentlessly, and build for impact.
+                    <p data-pt="Especializo-me em construir <strong>plataformas SaaS</strong>, <strong>aplicações com IA</strong> e <strong>sistemas full-stack</strong> projetados para resolver problemas complexos do mundo real. Minha abordagem é pragmática: entregue rápido, itere sem parar e construa com impacto."
+                        data-en="I specialize in building <strong>SaaS platforms</strong>, <strong>AI-powered applications</strong>, and <strong>full-stack systems</strong> designed to solve complex real-world problems. My approach is pragmatic: ship fast, iterate relentlessly, and build for impact.">
+                        Especializo-me em construir <strong>plataformas SaaS</strong>,
+                        <strong>aplicações com IA</strong> e
+                        <strong>sistemas full-stack</strong> projetados para resolver problemas
+                        complexos do mundo real. Minha abordagem é pragmática: entregue
+                        rápido, itere sem parar e construa com impacto.
                     </p>
-                    <p>
-                        Currently focused on the intersection of applied AI and product
-                        engineering — creating tools that amplify human capability
-                        and drive measurable results.
+                    <p data-pt="Atualmente focado na interseção de IA aplicada e engenharia de produto — criando ferramentas que amplificam a capacidade humana e geram resultados mensuráveis."
+                        data-en="Currently focused on the intersection of applied AI and product engineering — creating tools that amplify human capability and drive measurable results.">
+                        Atualmente focado na interseção de IA aplicada e engenharia de
+                        produto — criando ferramentas que amplificam a capacidade humana
+                        e geram resultados mensuráveis.
                     </p>
                 </div>
 
@@ -138,28 +206,28 @@
                             <span class="stat-icon">🚀</span>
                             <div>
                                 <span class="stat-number">Builder</span>
-                                <span class="stat-label">Mindset</span>
+                                <span class="stat-label" data-pt="Mentalidade" data-en="Mindset">Mentalidade</span>
                             </div>
                         </div>
                         <div class="about-stat">
                             <span class="stat-icon">🤖</span>
                             <div>
                                 <span class="stat-number">AI-First</span>
-                                <span class="stat-label">Approach</span>
+                                <span class="stat-label" data-pt="Abordagem" data-en="Approach">Abordagem</span>
                             </div>
                         </div>
                         <div class="about-stat">
                             <span class="stat-icon">✈️</span>
                             <div>
-                                <span class="stat-number">Aerospace</span>
-                                <span class="stat-label">Background</span>
+                                <span class="stat-number">Aeroespacial</span>
+                                <span class="stat-label" data-pt="Formação" data-en="Background">Formação</span>
                             </div>
                         </div>
                         <div class="about-stat">
                             <span class="stat-icon">📦</span>
                             <div>
-                                <span class="stat-number">Product</span>
-                                <span class="stat-label">Focused</span>
+                                <span class="stat-number">Produto</span>
+                                <span class="stat-label" data-pt="Focado" data-en="Focused">Focado</span>
                             </div>
                         </div>
                     </div>
@@ -175,8 +243,10 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">02</span>
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">A selection of things I've built and shipped.</p>
+                <h2 class="section-title" data-pt="Projetos" data-en="Projects">Projetos</h2>
+                <p class="section-subtitle" data-pt="Uma seleção de coisas que construí e lancei."
+                    data-en="A selection of things I've built and shipped.">Uma seleção de coisas que construí e lancei.
+                </p>
             </div>
 
             <div class="projects-grid">
@@ -330,8 +400,10 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">03</span>
-                <h2 class="section-title">Stack & Skills</h2>
-                <p class="section-subtitle">Technologies I work with daily.</p>
+                <h2 class="section-title" data-pt="Stack & Habilidades" data-en="Stack & Skills">Stack & Habilidades
+                </h2>
+                <p class="section-subtitle" data-pt="Tecnologias com as quais trabalho diariamente."
+                    data-en="Technologies I work with daily.">Tecnologias com as quais trabalho diariamente.</p>
             </div>
 
             <div class="skills-grid">
@@ -403,9 +475,10 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">04</span>
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">
-                    Open to opportunities, collaborations, and interesting conversations.
+                <h2 class="section-title" data-pt="Vamos Conversar" data-en="Let's Connect">Vamos Conversar</h2>
+                <p class="section-subtitle" data-pt="Aberto a oportunidades, colaborações e conversas interessantes."
+                    data-en="Open to opportunities, collaborations, and interesting conversations.">
+                    Aberto a oportunidades, colaborações e conversas interessantes.
                 </p>
             </div>
 
@@ -460,8 +533,8 @@
                 </div>
 
                 <div class="contact-cta">
-                    <a href="mailto:yan@example.com" class="btn btn-primary btn-large" id="btnContactCta">
-                        <span>Send me a message</span>
+                    <a href="mailto:gus.ant.rod.10@gmail.com" class="btn btn-primary btn-large" id="btnContactCta">
+                        <span data-pt="Envie uma mensagem" data-en="Send me a message">Envie uma mensagem</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -480,8 +553,9 @@
             <p class="footer-text">
                 Designed & built by <strong>Gustavo</strong> — <span id="currentYear"></span>
             </p>
-            <p class="footer-sub">
-                Built with zero frameworks. Just clean code.
+            <p class="footer-sub" data-pt="Construído sem frameworks. Apenas código limpo."
+                data-en="Built with zero frameworks. Just clean code.">
+                Construído sem frameworks. Apenas código limpo.
             </p>
         </div>
     </footer>

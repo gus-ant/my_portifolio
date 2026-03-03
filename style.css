@@ -258,6 +258,66 @@ body:hover .cursor-ring {
   width: 100%;
 }
 
+/* ── Language Switcher ── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 6px;
+  margin-right: var(--space-md);
+  transition: border-color var(--transition);
+}
+
+.lang-switcher:hover {
+  border-color: var(--border-hover);
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 999px;
+  transition: all var(--transition-fast);
+  color: var(--text-muted);
+}
+
+.lang-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.flag-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lang-code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.lang-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
 /* Mobile toggle */
 .nav-toggle {
   display: none;
@@ -305,6 +365,24 @@ body:hover .cursor-ring {
   overflow: hidden;
 }
 
+/* Hero inner: two-column layout */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3xl);
+}
+
+.hero-content {
+  text-align: left;
+  max-width: 580px;
+  flex: 1 1 auto;
+}
+
 /* Ambient glow */
 .hero-glow {
   position: absolute;
@@ -343,12 +421,7 @@ body:hover .cursor-ring {
   z-index: 0;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 720px;
-}
+/* .hero-content handled above in the hero-inner block */
 
 /* Tag line */
 .hero-tag {
@@ -416,9 +489,174 @@ body:hover .cursor-ring {
 .hero-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--space-md);
   flex-wrap: wrap;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO PHOTO
+   ═══════════════════════════════════════════════════════════════ */
+
+.hero-photo-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 320px;
+}
+
+/* Outer decorative ring */
+.hero-photo-ring {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg,
+    var(--accent) 0%,
+    rgba(108, 99, 255, 0.2) 40%,
+    transparent 60%,
+    var(--accent) 100%
+  );
+  padding: 3px;
+  animation: ringRotate 8s linear infinite;
+}
+
+@keyframes ringRotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Inner container */
+.hero-photo-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ringRotate 8s linear infinite reverse; /* counter-rotate to stay upright */
+  transition: border-color var(--transition);
+}
+
+.hero-photo-container:hover {
+  border-color: var(--accent);
+}
+
+/* Actual photo */
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Placeholder state */
+.hero-photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-lg);
+  text-align: center;
+  pointer-events: none;
+}
+
+.placeholder-icon {
+  color: var(--text-muted);
+  margin-bottom: var(--space-xs);
+  opacity: 0.5;
+}
+
+.placeholder-text {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.placeholder-hint {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Hover overlay (edit icon) */
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(10, 15, 30, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity var(--transition);
+  color: var(--text-primary);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.hero-photo-container:hover .photo-overlay {
+  opacity: 1;
+}
+
+/* Orbit decorative dots */
+.orbit-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow), 0 0 2px var(--accent);
+}
+
+.orbit-dot-1 {
+  width: 10px;
+  height: 10px;
+  top: 10px;
+  left: 50%;
+  animation: orbitPulse 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.orbit-dot-2 {
+  width: 6px;
+  height: 6px;
+  bottom: 30px;
+  right: 20px;
+  animation: orbitPulse 3s ease-in-out infinite;
+  animation-delay: 1s;
+  background: #a78bfa;
+  box-shadow: 0 0 8px rgba(167, 139, 250, 0.4);
+}
+
+.orbit-dot-3 {
+  width: 8px;
+  height: 8px;
+  bottom: 20px;
+  left: 20px;
+  animation: orbitPulse 3s ease-in-out infinite;
+  animation-delay: 2s;
+  background: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+@keyframes orbitPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.4); }
 }
 
 
@@ -924,6 +1162,40 @@ body:hover .cursor-ring {
 
   .nav-link {
     font-size: var(--fs-lg);
+  }
+
+  /* Language switcher on mobile */
+  .lang-switcher {
+    margin-right: var(--space-sm);
+  }
+
+  .lang-code {
+    display: none; /* show only flags on small screens */
+  }
+
+  /* Hero: Stack vertically on mobile */
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: var(--space-xl);
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-photo-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-photo-ring {
+    width: 200px;
+    height: 200px;
   }
 }
 
