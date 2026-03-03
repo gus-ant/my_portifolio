@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Gustavo — Software Engineer & AI Builder. Building intelligent systems, SaaS products, and aerospace-grade solutions." />
+    <meta name="keywords" content="Software Engineer, AI, SaaS, Aerospace, Portfolio, Builder" />
+    <meta name="author" content="Gustavo" />
+    <title>Gustavo — Software Engineer & AI Builder</title>
+
+    <!-- Google Fonts: Inter (body) + JetBrains Mono (code/accents) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════
+       CUSTOM CURSOR
+  ═══════════════════════════════════════════════ -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- ═══════════════════════════════════════════════
+       NAVBAR — Fixed, minimal, glassmorphism
+  ═══════════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" aria-label="Home">
+                <span class="logo-bracket">&lt;</span>G<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <!-- Ambient glow background -->
+        <div class="hero-glow"></div>
+        <div class="hero-grid-bg"></div>
+
+        <div class="hero-content reveal">
+            <p class="hero-tag">
+                <span class="tag-dot"></span>
+                Software Engineer · AI Builder · Aerospace
+            </p>
+            <h1 class="hero-title">
+                <span class="title-line">Hi, I'm <span class="highlight">Gustavo</span></span>
+            </h1>
+            <p class="hero-subtitle">
+                Building intelligent systems that<br />solve real problems.
+            </p>
+            <p class="hero-description">
+                Engineer with a builder mindset — from SaaS products and AI-powered
+                solutions to aerospace-grade systems. Focused on shipping software
+                that matters.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary" id="btnProjects">
+                    <span>View Projects</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary" id="btnContact">
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       ABOUT SECTION
+  ═══════════════════════════════════════════════ -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">01</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+
+            <div class="about-grid">
+                <!-- Left column — text -->
+                <div class="about-text reveal">
+                    <p class="about-lead">
+                        I'm a <strong>Software Engineer</strong> passionate about transforming
+                        ideas into scalable, intelligent products.
+                    </p>
+                    <p>
+                        With a background spanning <strong>Aerospace Engineering</strong> and
+                        <strong>Artificial Intelligence</strong>, I bring a unique perspective
+                        to software development — combining rigorous engineering discipline
+                        with a product-first mentality.
+                    </p>
+                    <p>
+                        I specialize in building <strong>SaaS platforms</strong>,
+                        <strong>AI-powered applications</strong>, and
+                        <strong>full-stack systems</strong> designed to solve complex
+                        real-world problems. My approach is pragmatic: ship fast,
+                        iterate relentlessly, and build for impact.
+                    </p>
+                    <p>
+                        Currently focused on the intersection of applied AI and product
+                        engineering — creating tools that amplify human capability
+                        and drive measurable results.
+                    </p>
+                </div>
+
+                <!-- Right column — visual highlight -->
+                <div class="about-visual reveal">
+                    <div class="about-card">
+                        <div class="about-stat">
+                            <span class="stat-icon">🚀</span>
+                            <div>
+                                <span class="stat-number">Builder</span>
+                                <span class="stat-label">Mindset</span>
+                            </div>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-icon">🤖</span>
+                            <div>
+                                <span class="stat-number">AI-First</span>
+                                <span class="stat-label">Approach</span>
+                            </div>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-icon">✈️</span>
+                            <div>
+                                <span class="stat-number">Aerospace</span>
+                                <span class="stat-label">Background</span>
+                            </div>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-icon">📦</span>
+                            <div>
+                                <span class="stat-number">Product</span>
+                                <span class="stat-label">Focused</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       PROJECTS SECTION
+  ═══════════════════════════════════════════════ -->
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">02</span>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">A selection of things I've built and shipped.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <article class="project-card reveal" id="project-1">
+                    <div class="project-top">
+                        <span class="project-label">SaaS · AI</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 15L15 5M15 5H7M15 5v8" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="project-name">AI Mentor Platform</h3>
+                    <p class="project-desc">
+                        An AI-powered mentoring platform with real-time conversation,
+                        contextual memory, and strategic canvas extraction.
+                    </p>
+                    <div class="project-stack">
+                        <span>Python</span>
+                        <span>LangChain</span>
+                        <span>React</span>
+                        <span>Supabase</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card reveal" id="project-2">
+                    <div class="project-top">
+                        <span class="project-label">Full-Stack · SaaS</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 15L15 5M15 5H7M15 5v8" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="project-name">Task Management System</h3>
+                    <p class="project-desc">
+                        A productivity platform with multi-session task tracking,
+                        priority management, and intelligent scheduling.
+                    </p>
+                    <div class="project-stack">
+                        <span>Django</span>
+                        <span>PostgreSQL</span>
+                        <span>JavaScript</span>
+                        <span>REST API</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card reveal" id="project-3">
+                    <div class="project-top">
+                        <span class="project-label">AI · NLP</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 15L15 5M15 5H7M15 5v8" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="project-name">RAG Knowledge Engine</h3>
+                    <p class="project-desc">
+                        A retrieval-augmented generation system for intelligent document
+                        analysis with custom embeddings and vector search.
+                    </p>
+                    <div class="project-stack">
+                        <span>LangChain</span>
+                        <span>ChromaDB</span>
+                        <span>Gemini</span>
+                        <span>Python</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card reveal" id="project-4">
+                    <div class="project-top">
+                        <span class="project-label">AI Agents</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 15L15 5M15 5H7M15 5v8" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="project-name">Multi-Agent System</h3>
+                    <p class="project-desc">
+                        Autonomous agent orchestration with guardrails, role-based routing,
+                        and domain-specific LLM workflows.
+                    </p>
+                    <div class="project-stack">
+                        <span>LangGraph</span>
+                        <span>FastAPI</span>
+                        <span>Ollama</span>
+                        <span>Python</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card reveal" id="project-5">
+                    <div class="project-top">
+                        <span class="project-label">Aerospace · Simulation</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 15L15 5M15 5H7M15 5v8" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="project-name">Flight Dynamics Simulator</h3>
+                    <p class="project-desc">
+                        A computational flight dynamics model for trajectory optimization
+                        and stability analysis of unmanned aerial vehicles.
+                    </p>
+                    <div class="project-stack">
+                        <span>MATLAB</span>
+                        <span>Python</span>
+                        <span>NumPy</span>
+                        <span>C++</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="project-card reveal" id="project-6">
+                    <div class="project-top">
+                        <span class="project-label">Web · Open Source</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 15L15 5M15 5H7M15 5v8" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="project-name">Developer Portfolio</h3>
+                    <p class="project-desc">
+                        This very site — a minimal, performant portfolio built with
+                        zero frameworks, focused on clean code and premium design.
+                    </p>
+                    <div class="project-stack">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Vanilla</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       SKILLS SECTION
+  ═══════════════════════════════════════════════ -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">03</span>
+                <h2 class="section-title">Stack & Skills</h2>
+                <p class="section-subtitle">Technologies I work with daily.</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <!-- Languages -->
+                <div class="skill-group reveal" id="skill-languages">
+                    <h3 class="skill-group-title">Languages</h3>
+                    <div class="skill-badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">TypeScript</span>
+                        <span class="badge">C++</span>
+                        <span class="badge">SQL</span>
+                        <span class="badge">HTML / CSS</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="skill-group reveal" id="skill-frameworks">
+                    <h3 class="skill-group-title">Frameworks</h3>
+                    <div class="skill-badges">
+                        <span class="badge">React</span>
+                        <span class="badge">Next.js</span>
+                        <span class="badge">Django</span>
+                        <span class="badge">FastAPI</span>
+                        <span class="badge">Node.js</span>
+                        <span class="badge">Express</span>
+                    </div>
+                </div>
+
+                <!-- AI & ML -->
+                <div class="skill-group reveal" id="skill-ai">
+                    <h3 class="skill-group-title">AI & Machine Learning</h3>
+                    <div class="skill-badges">
+                        <span class="badge badge-accent">LangChain</span>
+                        <span class="badge badge-accent">LangGraph</span>
+                        <span class="badge badge-accent">OpenAI API</span>
+                        <span class="badge badge-accent">Gemini</span>
+                        <span class="badge badge-accent">RAG</span>
+                        <span class="badge badge-accent">LLM Agents</span>
+                        <span class="badge badge-accent">Embeddings</span>
+                        <span class="badge badge-accent">Prompt Engineering</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-group reveal" id="skill-tools">
+                    <h3 class="skill-group-title">Tools & Infrastructure</h3>
+                    <div class="skill-badges">
+                        <span class="badge">Git</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">Supabase</span>
+                        <span class="badge">PostgreSQL</span>
+                        <span class="badge">ChromaDB</span>
+                        <span class="badge">Vercel</span>
+                        <span class="badge">Linux</span>
+                        <span class="badge">VS Code</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       CONTACT SECTION
+  ═══════════════════════════════════════════════ -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">04</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">
+                    Open to opportunities, collaborations, and interesting conversations.
+                </p>
+            </div>
+
+            <div class="contact-content reveal">
+                <div class="contact-links">
+                    <a href="mailto:gus.ant.rod.10@gmail.com" class="contact-card" id="contact-email">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor"
+                                    stroke-width="1.5" />
+                                <path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">gus.ant.rod.10@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/gus-ant" target="_blank" rel="noopener noreferrer" class="contact-card"
+                        id="contact-github">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">github.com/gus-ant</span>
+                        </div>
+                    </a>
+
+                    <a href="https://linkedin.com/in/yan" target="_blank" rel="noopener noreferrer" class="contact-card"
+                        id="contact-linkedin">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor"
+                                    stroke-width="1.5" />
+                                <path d="M7 11v5M7 7.01V7M11 16v-3.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5V16"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">linkedin.com/in/yan</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contact-cta">
+                    <a href="mailto:yan@example.com" class="btn btn-primary btn-large" id="btnContactCta">
+                        <span>Send me a message</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                Designed & built by <strong>Gustavo</strong> — <span id="currentYear"></span>
+            </p>
+            <p class="footer-sub">
+                Built with zero frameworks. Just clean code.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

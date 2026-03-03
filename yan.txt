@@ -1,0 +1,152 @@
+faça um prompt daora para um agente de codigo codar um site de portifólio para mim, nao deixando de ser minimalista e moderno. Seja criativo
+
+Boa, Gustavo 😎🚀
+Vou te entregar um prompt nível senior engineer + product designer, pra você jogar direto no seu agente de código (Cursor, Copilot, Devin-like, etc.).
+
+A ideia é: minimalista, moderno, com identidade forte de engenheiro + IA + space vibe (que combina muito com teus projetos 🚀✨).
+💎 PROMPT PARA O AGENTE
+
+Você é um desenvolvedor Frontend Senior com forte senso de design minimalista moderno.
+
+Crie um site de portfólio pessoal com foco em:
+- Engenharia de Software
+- Inteligência Artificial
+- Projetos SaaS
+- Engenharia Aeroespacial
+- Mentalidade de Builder
+
+O site deve ser:
+
+ESTILO:
+- Minimalista
+- Moderno
+- Elegante
+- Clean
+- Visual premium
+- Muito espaço em branco
+- Tipografia forte e marcante
+- Microinterações suaves
+- Animações sutis (fade, slide, reveal on scroll)
+- Dark mode por padrão
+- Inspirado em: Stripe, Linear, Vercel
+
+STACK:
+- HTML5 semântico
+- CSS moderno (Flexbox + Grid)
+- JavaScript puro (sem frameworks)
+- Código extremamente organizado
+- Comentários explicativos
+- Separação clara entre estrutura, estilo e comportamento
+- Fácil manutenção e escalabilidade
+
+ESTRUTURA DO SITE:
+
+1) HERO SECTION
+- Nome em destaque grande
+- Subtítulo impactante (ex: "Building intelligent systems that solve real problems.")
+- Pequena descrição estratégica (1-2 linhas)
+- Botões:
+    - Ver Projetos
+    - Contato
+- Background com leve gradiente ou efeito sutil (pode usar partículas discretas ou glow suave)
+
+2) SOBRE MIM
+- Texto profissional estratégico
+- Foco em:
+    - Construção de soluções
+    - IA aplicada
+    - Sistemas inteligentes
+    - Mentalidade de produto
+- Layout em duas colunas (texto + destaque visual minimalista)
+
+3) PROJETOS
+- Cards modernos
+- Hover elegante
+- Cada projeto deve ter:
+    - Nome
+    - Pequena descrição
+    - Stack usada
+    - Botão "Ver projeto"
+- Layout responsivo
+- Grid elegante
+
+4) STACK & SKILLS
+- Seção visualmente organizada
+- Linguagens
+- Frameworks
+- Ferramentas
+- IA & ML
+- Pode usar badges minimalistas
+
+5) CONTATO
+- Layout simples e elegante
+- Email
+- GitHub
+- LinkedIn
+- Botão com efeito hover moderno
+
+REQUISITOS TÉCNICOS IMPORTANTES:
+- Totalmente responsivo
+- Mobile-first
+- Performance otimizada
+- Código limpo e legível
+- Sem dependências externas pesadas
+- Uso de variáveis CSS para tema
+- Scroll suave
+- Navbar fixa minimalista
+- Efeito reveal ao rolar a página
+
+IDENTIDADE VISUAL:
+- Paleta:
+    - Fundo: #0f172a ou similar
+    - Destaque: roxo, azul elétrico ou verde neon discreto
+- Tipografia moderna (Google Fonts elegante)
+- Aparência tech + clean
+
+EXTRA DIFERENCIAL:
+- Pequeno detalhe visual que remeta a espaço/tecnologia
+- Cursor customizado sutil
+- Pequena animação no nome
+- Microinterações profissionais
+
+ORGANIZAÇÃO:
+- index.html
+- style.css
+- script.js
+- Comentários explicando cada parte
+
+IMPORTANTE:
+O site deve parecer o portfólio de alguém que:
+- Trabalha com IA
+- Constrói SaaS
+- Tem visão internacional
+- Quer trabalhar fora
+- Tem mentalidade de engenheiro construtor
+
+Evite visual poluído.
+Evite exageros.
+Evite cores fortes demais.
+Evite animações chamativas demais.
+
+Resultado final deve transmitir:
+confiança
+inteligência
+sofisticação
+capacidade técnica
+foco em produto
+
+Se você quiser, eu posso:
+
+    🔥 Fazer uma versão ainda mais estratégica voltada para recrutadores internacionais
+
+    🚀 Fazer uma versão com estética Space + Pixel Art
+
+    🧠 Fazer uma versão com foco total em IA
+
+    💰 Fazer uma versão focada em vender você como SaaS Builder
+
+    🧑‍💻 Fazer uma versão para aplicar para Big Tech
+
+Qual direção você quer seguir agora?
+
+
